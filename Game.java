@@ -104,7 +104,7 @@ public class Game {
 
             for (int j = 0; j < _platforms.size(); j++){
                 if ((!_platforms.get(j).isdisappeared()) && (_doodle.intersects(_platforms.get(j).getXLoc(), _platforms.get(j).getYLoc(), Constants.PLATFORM_WIDTH,Constants.PLATFORM_HEIGHT) && (_yPrevPosition < _yPosition))){
-                    if ((score > 2) && (Math.random() < 0.25) ){ 
+                    if ((score > 2) && (Math.random() < 0.25) && (!_platforms.get(j).isbouncy())){ 
                         _platforms.get(j).makedisappeared();
                         _platforms.get(j).setColor(Color.PINK);
                     }
