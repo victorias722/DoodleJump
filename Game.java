@@ -104,7 +104,6 @@ public class Game {
 
             for (int j = 0; j < _platforms.size(); j++){
                 if ((!_platforms.get(j).isdisappeared()) && (_doodle.intersects(_platforms.get(j).getXLoc(), _platforms.get(j).getYLoc(), Constants.PLATFORM_WIDTH,Constants.PLATFORM_HEIGHT) && (_yPrevPosition < _yPosition))){
-                    score = score + 1;
                     if ((score > 2) && (Math.random() < 0.25) ){ 
                         _platforms.get(j).makedisappeared();
                         _platforms.get(j).setColor(Color.PINK);
@@ -119,8 +118,8 @@ public class Game {
                 
                 if (_doodle.getYLoc() <= 400){
                     _doodle.setYLoc(400);
+                    score = score + 1;
                     _platforms.get(j).setYLoc(_platforms.get(j).getYLoc() - _velocity*(16/1000.0));
-                        
                 }	
             }
            
