@@ -22,7 +22,7 @@ public class Game {
 
     public Game(Pane gamePane){
         gamePane.setPrefSize(800, 800);
-		gamePane.setStyle("-fx-background-color: pink;");
+	gamePane.setStyle("-fx-background-color: pink;");
         _gamePane = gamePane;
         _platform = new Platform(400,800);
         _platforms = new ArrayList<Platform>();
@@ -31,7 +31,7 @@ public class Game {
         _doodle = new Doodle(400,770);
         _gamePane.getChildren().addAll(_doodle.getNode(), _platform.getNode(), _label);
         KeyHandler myKeyHandler = new KeyHandler();
-		    _gamePane.addEventHandler(KeyEvent.KEY_RELEASED, myKeyHandler);
+	_gamePane.addEventHandler(KeyEvent.KEY_RELEASED, myKeyHandler);
         _gamePane.setFocusTraversable(true);
         this.generatePlatforms();
         this.setupTimeline();
@@ -48,7 +48,7 @@ public class Game {
         if (_platform.getXLoc()<0){
             _platform.setXLoc(0);
         }
-        if (_platform.getXLoc()>800){
+        if (_platform.getXLoc()>750){
             _platform.setXLoc(750);
         }
     }
